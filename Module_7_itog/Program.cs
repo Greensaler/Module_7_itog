@@ -6,7 +6,7 @@ namespace Module_7_itog
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Система классов итоговое задание модуль 7");
         }
     }
     abstract class Delivery
