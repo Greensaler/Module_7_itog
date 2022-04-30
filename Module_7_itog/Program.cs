@@ -22,7 +22,7 @@ namespace Module_7_itog
         public string Address;
     }
 
-    //Класс "Домашняя доставка" создан от класса "Доставка.
+    //Класс "Доставка на дом" создан от класса "Доставка.
     class HomeDelivery : Delivery
     {
         /* ... */
