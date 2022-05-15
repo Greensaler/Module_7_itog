@@ -14,7 +14,7 @@ namespace Module_7_itog
             Console.WriteLine("Итоговое задание модуль 7");
             Order order = new Order();
             order.DisplayOrderInfo();
-
+            
         }
 
     }
@@ -102,11 +102,11 @@ namespace Module_7_itog
             ArrivalDate = arrivalDate;
             Point = point;
         }
-                // Переопределение обязательного абстрактоно метода
+        // Переопределение обязательного абстрактоно метода
         public override void Describe()
         {
             Console.WriteLine("ОПЦИЯ ДОСТАВКИ КУРЬЕРОМ В ПУНКТ ВЫДАЧИ НА ОПРЕДЕЛЕННОЕ ВРЕМЯ АКТИВНА");
-              
+
         }
         // Переопределение виртуального метода
         public override void DisplayClientInfo()
@@ -136,16 +136,9 @@ namespace Module_7_itog
     }
 
 
-
-
-
     //Класс "Заказ"
     public class Order
     {
-
-        public bool IsOnShift1;
-        public bool IsOnShift2;
-
 
 
         // Метод сбора данных о клиенте
@@ -216,7 +209,10 @@ namespace Module_7_itog
 
         }
 
+        public class OrderDescribe : Order
+        {
 
+        }
 
     }
 }
