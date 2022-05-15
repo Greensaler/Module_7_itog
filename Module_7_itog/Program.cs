@@ -14,7 +14,7 @@ namespace Module_7_itog
             Console.WriteLine("Итоговое задание модуль 7");
             Order order = new Order();
             order.DisplayOrderInfo();
-            
+
         }
 
     }
@@ -139,7 +139,15 @@ namespace Module_7_itog
     //Класс "Заказ"
     public class Order
     {
-
+        
+        public enum DescriptionType
+        {
+            Masha = 1,
+            Kate,
+            Angela,
+            Lucy,
+            Anna
+        }
 
         // Метод сбора данных о клиенте
         protected (string firstName, string lastName, string adress, int age, bool isOnShift1, bool isOnShift2, DateTime arrivalDate, string point) EnterClientInfo()
@@ -207,11 +215,35 @@ namespace Module_7_itog
                 pickPointDelivery.DisplayClientInfo();
             }
 
+            
+            Product<int, string> product = new  Product<int, string>();
+            DescriptionType descriptionType = DescriptionType.Angela;
+            product.Number = (int)descriptionType;
+            product.Description = "Рыжая, рост 198 см, размер ноги 44";
+            
+
+            Console.WriteLine($"Номер продукта {product.Number}" +
+                $"\nНаименование продукта {descriptionType}," +
+                $"\nОписание продукта: {product.Description}");
+ 
         }
 
-        public class OrderDescribe : Order
+        protected class Product<TNumber, TDescript> 
+            where TNumber:struct 
+            where TDescript:class
         {
+            public TNumber Number;
+            public TDescript Description;
 
+            // public enum DescriptionType 
+            //{
+            //    Masha = 1,
+            //    Kate,
+            //    Angela,
+            //    Lucy,
+            //    Anna
+            //}
+            
         }
 
     }
